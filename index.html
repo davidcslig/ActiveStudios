@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Active Studios — Em breve</title>
+<meta name="description" content="Active Studios — Escola de Karate Wado Ryu e Bem-Estar. Site em construção.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink-900: #1c1c1c;
+    --slate-700: #58595b;
+    --slate-500: #7a7b7d;
+    --blue-700: #0a5578;
+    --blue-600: #0e6f95;
+    --blue-400: #2e93b8;
+    --paper: #ffffff;
+    --paper-line: #ffffff;
+    --ember: #e8a33d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--paper);
+    color: var(--slate-700);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 6vw;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* subtle tatami-grid texture in the background */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(14, 111, 149, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 111, 149, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .wrap {
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .mark img {
+    display: block;
+    height: 272px;
+    width: auto;
+  }
+
+  h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: 0.5px;
+    color: var(--blue-700);
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 500;
+    color: var(--teal-300);
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  p.lead {
+    margin-top: 20px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--slate-500);
+  }
+
+  /* belt progress bar — the signature element */
+  .belt {
+    margin: 44px 0 8px;
+    display: flex;
+    width: 100%;
+    height: 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(28, 28, 28, 0.1);
+  }
+
+  .belt span {
+    flex: 1;
+    height: 100%;
+  }
+
+  .belt span:nth-child(1) { background: #f4efe2; }
+  .belt span:nth-child(2) { background: #e8c93d; }
+  .belt span:nth-child(3) { background: #e8a33d; }
+  .belt span:nth-child(4) { background: #4a9d5f; }
+  .belt span:nth-child(5) { background: #3d6fe8; }
+  .belt span:nth-child(6) { background: #7a4de8; }
+  .belt span:nth-child(7) { background: #6b3d1f; }
+  .belt span:nth-child(8) {
+    background: #111;
+    position: relative;
+  }
+  .belt span:nth-child(8)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(232, 163, 61, 0.35) 0 6px,
+      transparent 6px 12px
+    );
+    animation: stripe-move 1.8s linear infinite;
+  }
+
+  @keyframes stripe-move {
+    from { background-position: 0 0; }
+    to { background-position: 34px 0; }
+  }
+
+  .belt-caption {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: center;
+    font-size: 0.98rem;
+  }
+
+  .contact a {
+    color: var(--ink-900);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(14, 111, 149, 0.35);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .contact a:hover,
+  .contact a:focus-visible {
+    color: var(--blue-600);
+    border-color: var(--blue-600);
+  }
+
+  footer {
+    margin-top: 48px;
+    font-size: 0.8rem;
+    color: var(--slate-500);
+    opacity: 0.75;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .belt span:nth-child(8)::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark">
+      <img src="images/Logo3.png" alt="Active Studios">
+    </div>
+
+    <p class="lead">
+      Estamos a preparar o nosso novo espaço online — em breve com programas,
+      horários e a nossa área de recursos para alunos e famílias.
+    </p>
+
+    <!-- <div class="belt" role="img" aria-label="Faixas de karateca representando progresso: branca, amarela, laranja, verde, azul, roxa, castanha e preta">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div> -->
+    <div class="belt-caption">Site em construção</div>
+
+    <div class="contact">
+      <a href="mailto:geral@activestudios.pt">geral@activestudios.pt</a>
+      <a href="tel:+351900000000">+351 968 079 196</a>
+    </div>
+
+    <footer>&copy; 2026 Active Studios. Todos os direitos reservados.</footer>
+  </div>
+</body>
+</html>
