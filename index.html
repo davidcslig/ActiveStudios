@@ -66,12 +66,14 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 32px;
+    width: min(100%, 340px);
   }
 
   .mark img {
     display: block;
-    height: 272px;
-    width: auto;
+    width: min(100%, 260px);
+    height: auto;
+    max-height: 32vh;
   }
 
   h1 {
@@ -179,6 +181,18 @@
     font-size: 0.8rem;
     color: var(--slate-500);
     opacity: 0.75;
+  }
+
+  @media (max-width: 480px) {
+    .mark {
+      width: min(100%, 220px);
+      margin-bottom: 20px;
+    }
+
+    .mark img {
+      width: min(100%, 180px);
+      max-height: 22vh;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
